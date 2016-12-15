@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<size>
+	<s>
+		<description><!-- 适合身高低于l65的人群 --></description>
+	</s>
+	<m>
+		<description>适合身高在l65-170的人群</description>
+	</m>
+	<l>
+		<description>适合身高在170-175的人群</description>
+	</l>
+	<xl>
+		<description>适合身高在175-180的人群</description>
+	</xl>
+	<xxl>
+		<description>适合身高在180-185的人群</description>
+	</xxl>
+</size>

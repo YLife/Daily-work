@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cloth>
+	<size id="S">
+		<Suitable><!--身高低于165--></Suitable>
+	</size>
+	<size id="M">
+		<Suitable><!--身高在165-170之间--></Suitable>
+	</size>
+	<size id="L">
+		<Suitable><!--身高在170-175之间--></Suitable>
+	</size>
+	<size id="XL">
+		<Suitable><!--身高在175-180之间--></Suitable>
+	</size>
+	<size id="XXL">
+		<Suitable><!--身高在180-185之间--></Suitable>
+	</size>
+</cloth>

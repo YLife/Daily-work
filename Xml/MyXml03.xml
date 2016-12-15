@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palyer>
+	<name id="王显明">
+		<EstimatedScore>75</EstimatedScore>
+		<RealScore>80</RealScore>
+	</name>
+	<name id="宋佳">
+		<EstimatedScore>75</EstimatedScore>
+		<RealScore>88</RealScore>
+	</name>
+</palyer>
