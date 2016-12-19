@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+	<student age="24" name="张三"/>
+	<student age="22" name="李四"/>
+	<student age="13" name="李小四"/>
+</students>

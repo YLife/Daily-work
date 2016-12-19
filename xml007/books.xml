@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book id="bk101">
+		<author>王二小</author>
+		<title>我的青春</title>
+		<description>...</description>
+	</book>
+	<book id="bk102">
+		<author>泥秋</author>
+		<title>JAVA高级编程</title>
+		<description>...</description>
+	</book>
+</books>
