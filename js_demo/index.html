@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			function f1(obj , color){
+				obj.style.backgroundColor=color;
+			}
+			function f2 (obj) {
+				div1.innerHTML = obj.value;
+			}
+			function f3 () {
+				alert("网页加载完毕");
+			}
+			function f4 (obj) {
+				alert(obj.value);
+			}
+			function f5 (obj) {
+				obj.value = "";
+			}
+			function f6 (obj) {
+				if (obj.value.length >= 6) {
+					alert("可以使用");
+					div2.innerHTML = "可以使用";
+				} else{
+					alert("长度必须大于6");
+					div2.innerHTML = "长度必须大于6";
+				}
+			}
+			function f7 () {
+				return false;
+			}
+			function f8 () {
+				alert("你点击了网页");
+			}
+			function f9 () {
+				alert("你点击了表单");
+			}
+			function f10() {
+				alert("你点击了按钮");
+				event.cancelBubble = true;
+			}
+			function f11 () {
+				var a = "123456789";
+				alert(a.slice(1 , 3));
+				alert(a.slice(-3, -1));
+			}
+			function f12 () {
+				var a = new Array(2);
+				a["k1"] = "v1";
+				a["v1"] = "k1";
+				alert(a["k1"]);
+			}
+		</script>
+	</head>
+	<body onload="f3()" onclick="f8()">
+		<div style="width: 100px;height: 50px;background-color: blue;" onmouseover="f1(this , 'red')" onmouseout="f1(this , 'blue')"></div>
+		<input onkeypress="f2(this)" />
+		<div id="div1"></div>
+		<select onchange="f4(this)">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		<input value="提示信息" onfocus="f5(this)" onblur="f6(this)" />
+		<div id="div2"></div>
+		<form onclick="f9()" action="a.html" onsubmit="return f7();">
+			<input type="submit"/>
+			<input type="button" value="button" onclick="f10()" />
+		</form>
+		<input type="button" value="字符串函数" onclick="f11()"/>
+		<input type="button" value="js array" onclick="f12()" />
+	</body>
+</html>
