@@ -39,6 +39,7 @@
 			}
 			var timer = null;
 			function startMove1 () {
+				clearInterval(timer);
 				var oDiv = document.getElementById("div1");
 				timer = setInterval(function () {
 					if (oDiv.offsetLeft == 0) {
