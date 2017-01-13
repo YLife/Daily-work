@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js training</title>
+		<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		#div1 {
+			left: -200px;
+			width: 200px;
+			height: 200px;
+			position: relative;
+			margin-top: 50px;
+			background-color: pink;
+		}
+		
+		#share {
+			background-color: lightblue;
+			width: 20px;
+			height: 50px;
+			position: absolute;
+			left: 200px;
+			top: 75px;
+		}
+			
+		</style>
+		<script>
+			window.onload = function () {
+				var oDiv = document.getElementById("div1");
+				oDiv.onmouseover = function () {
+					startMove(0);
+				}
+				oDiv.onmouseout = function () {
+					startMove(-200);
+				}
+			}
+			var timer = null;
+			function startMove (target) {
+				clearInterval(timer);
+				var oDIV = document.getElementById("div1");
+				timer = setInterval(function () {
+					if (oDIV.offsetLeft < target) {
+						var speed = 10;
+					} else{
+						var speed = -10;
+					}
+
+					if (oDIV.offsetLeft == target) {
+						clearInterval(timer);
+					} else{
+						oDIV.style.left = oDIV.offsetLeft + speed + 'px';						
+					}
+				},30)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<span id="share">
+				分享
+			</span>
+		</div>
+	</body>
+</html>
