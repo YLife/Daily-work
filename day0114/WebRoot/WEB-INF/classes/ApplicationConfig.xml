@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<bean id="EmpDaoImpl" impl="com.yl.dao.impl.EmpDaoImpl"/>
+</config>
