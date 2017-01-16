@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片轮播</title>
+		<style>
+			.container{
+				margin: 160px auto;
+			}
+			ul{
+				position: absolute;
+				top:130px;
+				left: 230px;
+			}
+			li{
+				list-style: none;
+				border: solid 1px #ccc;
+				margin: 4px;
+				padding: 2px 5px;
+				width: 10px;
+				float: left;
+				background-color: darkgrey;
+			}
+			.clearfix{
+				display: block;
+				content: "";
+				clear: both;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				var num = 1;
+				function showImg () {
+					var imgs = document.getElementsByTagName("img");
+					var arr = document.getElementsByTagName("li");
+					for (var i = 0 ; i < imgs.length ; i++) {
+						imgs[i].style.display = "none";
+						arr[i].style.backgroundColor = "darkgrey";
+					}
+					document.getElementById("scroll_" + num).style.display = "block";
+					document.getElementById("label" + num).style.backgroundColor = "cornflowerblue";
+					num++;
+					if (num > 6) {
+						num = 1;
+					}
+				}
+				setInterval(showImg , 2000);
+			}
+		</script>
+	</head>
+	<body>
+		<div style="position: relative; border: solid 2px green; width: 500px; padding: 5px;" class="container">
+			<img id="scroll_1" src="img/scroll_1.jpg" style="display: block;"/>
+			<img id="scroll_2" src="img/scroll_2.jpg" style="display: none;"/>
+			<img id="scroll_3" src="img/scroll_3.jpg" style="display: none;"/>
+			<img id="scroll_4" src="img/scroll_4.jpg" style="display: none;"/>
+			<img id="scroll_5" src="img/scroll_5.jpg" style="display: none;"/>
+			<img id="scroll_6" src="img/scroll_6.jpg" style="display: none;"/>
+			<ul class="clearfix">
+				<li id="label1" style="background-color: cornflowerblue;">1</li>
+				<li id="label2">2</li>
+				<li id="label3">3</li>
+				<li id="label4">4</li>
+				<li id="label5">5</li>
+				<li id="label6">6</li>
+			</ul>
+		</div>
+	</body>
+</html>

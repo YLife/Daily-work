@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				position: absolute;
+				top:130px;
+				left: 230px;
+			}
+			li{
+				list-style: none;
+				border: solid 1px #ccc;
+				margin: 4px;
+				padding: 2px 5px;
+				width: 10px;
+				float: left;
+				background-color: gray;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var arr = document.getElementsByTagName("li");
+				var imgs = document.getElementsByTagName("img");
+				for(var i = 0; i < arr.length; i++) {
+					arr[i].onclick = function() {
+						for(var j = 0; j < imgs.length; j++) {
+							imgs[j].style.display = "none";
+						}
+						document.getElementById("scroll_" + this.innerHTML).style.display = "block";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div style="position: relative; border: solid 2px green; width: 500px; padding: 5px;">
+			<img id="scroll_1" src="img/scroll_1.jpg" style="display: block;"/>
+			<img id="scroll_2" src="img/scroll_2.jpg" style="display: none;"/>
+			<img id="scroll_3" src="img/scroll_3.jpg" style="display: none;"/>
+			<img id="scroll_4" src="img/scroll_4.jpg" style="display: none;"/>
+			<img id="scroll_5" src="img/scroll_5.jpg" style="display: none;"/>
+			<img id="scroll_6" src="img/scroll_6.jpg" style="display: none;"/>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</body>
+</html>

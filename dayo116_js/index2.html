@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function showTime () {
+				var d = new Date();
+				document.getElementById("div1").innerHTML = d.toLocaleString();
+			}
+			
+			window.onload = function () {
+				setInterval(showTime , 1000);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="div1" style="border: solid 1px rosybrown;"></div>
+	</body>
+</html>
