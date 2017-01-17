@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function move() {
+				var first = document.getElementById("first");
+				var second = document.getElementById("second");
+				var arr = first.getElementsByTagName("option");
+				for (var i = 0 ; i < arr.length ;) {
+					if (arr[i].selected) {
+						second.appendChild(arr[i]);
+						continue;
+					}
+					i++;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="move()">&gt;&gt;</button>
+		<select multiple="multiple" id="first">
+			<option>aaa</option>
+			<option>bbb</option>
+			<option>ccc</option>
+			<option>ddd</option>
+			<option>eee</option>
+			<option>fff</option>
+		</select>
+		<select multiple="multiple" id="second">
+			
+		</select>
+	</body>
+</html>

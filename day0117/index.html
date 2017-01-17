@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>图片轮播</title>
+		<meta charset="utf-8" />
+		<title></title>
 		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
 			.container{
 				margin: 160px auto;
 			}
@@ -32,14 +36,6 @@
 				var num = 1;
 				var arr = document.getElementsByTagName("li");
 				var imgs = document.getElementsByTagName("img");
-				
-				for (var i = 0 ; i < arr.length ; i++) {
-					arr[i].onclick = function () {
-						num = this.innerHTML;
-						showImg();
-					}					
-				}
-				
 				function showImg () {
 					for (var i = 0 ; i < imgs.length ; i++) {
 						imgs[i].style.display = "none";
@@ -52,12 +48,27 @@
 						num = 1;
 					}
 				}
-				
 				setInterval(showImg , 2000);
+				for (var i = 0 ; i < arr.length ; i++) {
+					arr[i].onclick = function () {
+						num = this.innerHTML;
+						showImg();
+					}					
+				}
+				
+				function change () {
+					var slide = document.getElementById("div1");
+					var speed = 10;
+					slide.style.left = slide.offsetLeft - speed + 'px';
+				}
+				setInterval(change,100);
 			}
 		</script>
 	</head>
 	<body>
+		<div style="position: relative;left: -200px;width: 150PX;height: 50PX; padding: 5px;border: solid 2px blueviolet;text-align: center;background-color: dodgerblue;margin: 30px;" id="div1">
+			<span style="font-weight: bold;">Slideshow !</span>
+		</div>
 		<div style="position: relative; border: solid 2px green; width: 500px; padding: 5px;" class="container">
 			<img id="scroll_1" src="img/scroll_1.jpg" style="display: block;"/>
 			<img id="scroll_2" src="img/scroll_2.jpg" style="display: none;"/>

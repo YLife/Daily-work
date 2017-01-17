@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr = new Array();
+			arr[0] = ["成都" , "眉山" , "绵阳"];
+			arr[1] = ["广州" , "东莞" , "佛山"];
+			arr[2] = ["南宁" , "桂林" , "钦州"];
+			function change (index) {
+				var city = document.getElementById("city");
+				city.length = 1;
+				for (var i = 0 ; i < arr[index].length ; i++) {
+					var option = document.createElement("option");
+					option.text = arr[index][i];
+					city.appendChild(option);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select id="province" onchange="change(this.selectedIndex - 1)">
+			<option>--请选择--</option>
+			<option>四川</option>
+			<option>广东</option>
+			<option>广西</option>
+		</select>
+		<select id="city">
+			<option>--请选择--</option>
+		</select>
+	</body>
+</html>

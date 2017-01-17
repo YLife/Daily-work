@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			ul{
+				position: absolute;
+				top:130px;
+				left: 230px;
+			}
+			li{
+				list-style: none;
+				border: solid 1px #ccc;
+				margin: 4px;
+				padding: 2px 5px;
+				width: 10px;
+				float: left;
+				background-color: darkgrey;
+			}
+			.clearfix{
+				display: block;
+				content: "";
+				clear: both;
+			}
+		</style>
+		<script type="text/javascript">
+			var count = 1;
+			function change () {
+				if (count >= 6 ) {
+					count = 1;
+				}
+				document.getElementById("myImg").setAttribute("src" , "img/scroll_"+count+".jpg");
+				count++;
+			}
+			setInterval(change , 1000);
+		</script>
+	</head>
+	<body>
+		<div style="position: relative; border: solid 2px green; width: 500px; padding: 5px;" class="container">
+			<img id="myImg" src="img/scroll_1.jpg"/>
+			<ul class="clearfix">
+				<li id="label1" style="background-color: cadetblue;">1</li>
+				<li id="label2">2</li>
+				<li id="label3">3</li>
+				<li id="label4">4</li>
+				<li id="label5">5</li>
+				<li id="label6">6</li>
+			</ul>
+		</div>
+	</body>
+</html>

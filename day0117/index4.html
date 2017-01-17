@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function test () {
+				var img = document.createElement("img");
+				img.setAttribute("src" , "img/bg1.gif");
+				document.getElementById("mydiv").appendChild(img);
+				
+			}
+			function test2 () {
+				var img3 = document.getElementById("old");
+				var img2 = document.createElement("img");
+				img2.setAttribute("src" , "img/bg2.gif");
+				document.getElementById("mydiv").insertBefore(img2 , img3);
+			}
+			function test3 () {
+				var img4 = document.getElementById("old").cloneNode();
+				document.getElementById("mydiv").appendChild(img4);
+			}
+			function test4(){
+				var img5 = document.getElementById("old");
+				document.getElementById("mydiv").removeChild(img5);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="test()">create</button>
+		<button onclick="test2()">insert</button>
+		<button onclick="test3()">clone</button>
+		<button onclick="test4()">remove</button>
+		<div id="mydiv" style="border: solid 2px red;">
+			<img id="old" src="img/bg1.gif" />
+		</div>
+	</body>
+</html>
