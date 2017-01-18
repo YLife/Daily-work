@@ -8,12 +8,12 @@
 				var first = document.getElementById("first");
 				var second = document.getElementById("second");
 				var arr = first.getElementsByTagName("option");
-				for (var i = 0 ; i < arr.length ;) {
+				for (var i = 0 ; i < arr.length ;i++) {
 					if (arr[i].selected) {
 						second.appendChild(arr[i]);
-						continue;
+						
 					}
-					i++;
+					
 				}
 			}
 		</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>form valicate</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style type="text/css">
+			.container{
+				width: 400px;
+				height: 300px;
+				padding: auto;
+				margin: 100px auto;
+			}
+		</style>
+		<script type="text/javascript">
+			function confirm(){
+				var uname = document.getElementById("uname");
+				var pwd = document.getElementById("pwd");
+				var email = document.getElementById("email");
+				
+				if (uname.value == "") {
+					uname.nextSibling.innerHTML = "账号不能为空";
+					return false;
+				} else if(uname.value.length < 4) {
+					uname.nextSibling.innerHTML = "用户名长度不能小于4";
+					return false;
+				} else {
+					uname.nextSibling.innerHTML = "";
+				}
+				
+				if (pwd.value == "") {
+					pwd.nextSibling.innerHTML = "密码不能为空";
+					return false;
+				} else if (pwd.value.length > 10 || pwd.value.length < 6){
+					pwd.nextSibling.innerHTML = "密码长度必须在6-10之间";
+					return false;
+				} else {
+					pwd.nextSibling.innerHTML = "";
+				}
+				var reg = /^\w+@\w+(\.[A-Za-z]+){1,2}$/
+				if (email.value == "") {
+					email.nextSibling.innerHTML = "邮箱不能为空";
+					return false;
+				} else if(!reg.test(email.value)) {
+					email.nextSibling.innerHTML = "邮箱格式不正确";
+					return false;
+				} else{
+					email.nextSibling.innerHTML = "";
+				}
+				
+				return true;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<form action="success.html" method="post" onsubmit="return confirm()">
+				<div class="form-group">
+					<label>用户名：</label>
+					<input type="text" class="form-control" id="uname" /><span></span>
+				</div>
+				<div class="form-group">
+					<label>密码：</label>
+					<input type="password"  class="form-control" id="pwd"/><span</span>
+				</div>
+				<div class="form-group">
+					<label>Email：</label>
+					<input type="text" class="form-control" id="email"/><span></span>
+				</div>
+				<div class="form-group">
+					<input type="submit"  class="btn btn-success"/>
+					 <a href="success.html">跳转</a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
