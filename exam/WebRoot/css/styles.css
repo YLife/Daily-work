@@ -1,0 +1,16 @@
+.container{
+	width: 1000px !important;
+	height: 320px;
+	margin: 0 auto;
+	padding:10px;
+}
+.container1{
+	width: 400px !important;
+	margin: 20px auto;
+}
+.container2{
+	width: 750px !important;
+	height: 320px;
+	margin: 0 auto;
+	padding:10px;
+}
