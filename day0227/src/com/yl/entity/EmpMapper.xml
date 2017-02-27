@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "http://mybatis.org/dtd/mybatis-3-mapper.dtd" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.yl.entity.Emp">
+	<select id="queryEmps" resultType="com.yl.entity.Emp">
+		select * from emp
+	</select>
+	<select id="queryById" resultType="com.yl.entity.Emp" parameterType="int">
+		select * from emp where empno = #{a}
+	</select>
+	<select id="queryByName" resultType="com.yl.entity.Emp" parameterType="string">
+		select * from emp where ename like #{b}
+	</select>
+	<select id="queryEmpByCondition" resultType="Emp" parameterType="Emp">
+		select * from emp where ename like #{ename} and hiredate > #{hiredate} 
+	</select>
+	<select id="queryByMap" parameterType="map" resultType="Emp">
+		select * from emp 
+		<where>
+			<if test="ename != null and '' != ename">
+				and ename like #{ename}
+			</if>
+			<if test="deptno != null">
+				and deptno = #{deptno}
+			</if>
+		</where>
+	</select>
+	<select id="queryByChoose" resultType="Emp" parameterType="Emp">
+		select * from emp
+		<where>
+			<choose>
+				<when test="ename != null and '' != ename">
+					and ename like #{ename}
+				</when>
+				<when test="hiredate != null">
+					and hiredate > #{hiredate}
+				</when>
+				<when test="deptno != null">
+					and deptno = #{deptno}
+				</when>
+				<otherwise>
+					and sal > 2000
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+	
+	<select id="queryEmp" resultMap="EmpMap">
+		select ename as emp_name , sal as emp_sal from emp
+	</select>
+	<resultMap type="Emp" id="EmpMap">
+		<id property="empno" column="empno"/>
+		<result property="ename" column="emp_name"/>
+		<result property="sal" column="emp_sal"/>
+	</resultMap>
+	
+	<select id="queryCount" resultType="int">
+		select count(1) from emp
+	</select>
+	<insert id="addEmp" parameterType="Emp">
+		insert into emp values(null , #{ename} , #{job} ,#{sal} , #{comm} , #{mgr} , #{hiredate} , #{deptno})
+	</insert>
+	
+	<update id="updateEmp" parameterType="Emp">
+		update emp
+		<set>
+			<if test="ename != null">
+				ename = #{ename},
+			</if>
+			<if test="sal != null">
+				sal = #{sal},
+			</if>
+			<if test="comm != null">
+				comm = #{comm}
+			</if>
+		</set>
+		<where>
+			and empno = #{empno}
+		</where>
+	</update>
+	
+	<delete id="delEmp" parameterType="int">
+		delete from emp where empno = #{empno}
+	</delete>
+	
+</mapper>
