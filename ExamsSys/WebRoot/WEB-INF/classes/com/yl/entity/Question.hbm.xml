@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.yl.entity.Question">
+		<id name="q_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="question"></property>
+		<property name="option_a"></property>
+		<property name="option_b"></property>
+		<property name="option_c"></property>
+		<property name="option_d"></property>
+		<property name="answer"></property>
+		<many-to-one name="subject" class="com.yl.entity.Subject" column="subjectId" cascade="none" ></many-to-one>
+	</class>
+</hibernate-mapping>
