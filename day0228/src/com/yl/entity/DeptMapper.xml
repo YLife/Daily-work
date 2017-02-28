@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "http://mybatis.org/dtd/mybatis-3-mapper.dtd" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.yl.entity.Dept">
+	<select id="queryDepts" resultMap="DeptMap">
+		select * from dept d inner join emp e on d.deptno = e.deptno
+	</select>
+	
+	<resultMap type="Dept" id="DeptMap" autoMapping="true">
+		<id property="deptno" column="deptno"/>
+		<collection property="emp" column="deptno" ofType="Emp" resultMap="EmpMap"></collection>
+	</resultMap>
+	
+	<resultMap type="Emp" id="EmpMap" autoMapping="true">
+		<id property="empno" column="empno"/>
+	</resultMap>
+</mapper>
