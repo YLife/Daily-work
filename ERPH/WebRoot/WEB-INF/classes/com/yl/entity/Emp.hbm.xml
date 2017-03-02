@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.yl.entity.Emp">
+		<id name="empId">
+			<generator class="native"></generator>
+		</id>
+		<property name="empName"></property>
+		<property name="empPwd"></property>
+		<property name="empSex"></property>
+		<property name="empBorn"></property>
+		<property name="empDate"></property>
+		<property name="empNo"></property>
+		<property name="empPhone"></property>
+		<many-to-one cascade="none" name="empType" class="com.yl.entity.EmpType" column="typeId"></many-to-one>
+		<many-to-one cascade="none" name="empJob" class="com.yl.entity.EmpJob" column="jobId"></many-to-one>
+		<many-to-one cascade="none" name="empRole" class="com.yl.entity.EmpRole" column="roleId"></many-to-one>
+	</class>
+</hibernate-mapping>
