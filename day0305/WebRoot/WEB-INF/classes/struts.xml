@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
+<struts>
+	<package name="demo" extends="struts-default" namespace="/user">
+		<!-- <action name="user" class="com.yl.action.UserAction">
+			<result name="success">/success.jsp</result>
+		</action> -->
+		<!-- <action name="doLogin" class="com.yl.action.UserAction" method="doLogin">
+			<result name="success">/success.jsp</result>
+		</action> -->
+		<!-- <action name="doLogin" class="com.yl.action.UserAction" method="doLogin">
+			<result name="success" type="chain">list</result>
+		</action> -->
+		<action name="doLogin" class="com.yl.action.UserAction" method="doLogin">
+			<result name="success" type="redirectAction">list</result>
+		</action>
+		<action name="list" class="com.yl.action.UserAction" method="doList">
+			<result name="list">/list.jsp</result>
+		</action>
+		<action name="doRegist" class="com.yl.action.UserAction" method="doRegist">
+			<result name="success" type="redirect">/success.jsp</result>
+		</action>
+		<action name="servletApi" class="com.yl.action.ServletAPIAction">
+			<result name="index">/success.jsp</result>
+		</action>
+	</package>
+</struts>
