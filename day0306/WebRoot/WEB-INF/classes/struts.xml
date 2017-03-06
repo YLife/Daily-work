@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="question" extends="struts-default">
+		<action name="list" class="com.yl.action.QuestionaAction" method="list">
+			<result name="list">/index.jsp</result>
+		</action>
+		<action name="addQuestion" class="com.yl.action.QuestionaAction" method="addQuestion">
+			<result name="add" type="redirectAction">list</result>
+		</action>
+		<action name="load" class="com.yl.action.QuestionaAction" method="load">
+			<result name="load">/load.jsp</result>
+		</action>
+		<action name="save" class="com.yl.action.QuestionaAction" method="save">
+			<result name="save" type="redirectAction">list</result>
+		</action>
+	</package>
+</struts>    
