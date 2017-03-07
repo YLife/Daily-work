@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="demo" extends="struts-default">
+		<interceptors>
+			<interceptor name="myInterceptor" class="com.yl.interceptor.MyInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="myInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<global-results>
+			<result name="login">/index.jsp</result>
+		</global-results>
+		<action name="user" class="com.yl.action.UserAction" method="doLogin">
+			<result name="login">/index.jsp</result>
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="index" class="com.opensymphony.xwork2.ActionSupport">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+</struts>    

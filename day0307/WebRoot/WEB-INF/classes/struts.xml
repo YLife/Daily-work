@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="demo" extends="struts-default">
+		<interceptors>
+			<!-- <interceptor name="myInterceptor" class="com.yl.interceptor.MyInterceptor"></interceptor> -->
+			<interceptor name="myInterceptor" class="com.yl.interceptor.MyInter"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="myInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<action name="user" class="com.yl.action.UserAction">
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		<action name="hello">
+			<result>/hello.jsp</result>
+		</action>
+		<action name="hellos" class="com.yl.action.HelloAction">
+			<!-- <interceptor-ref name="myInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+			<!-- <interceptor-ref name="myStack"></interceptor-ref> -->
+			<result name="success">/hello.jsp</result>
+		</action>
+	</package>
+</struts>    
