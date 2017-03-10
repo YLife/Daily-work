@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.yl.pojo">
+	<class name="Card">
+		<id name="cardId">
+			<generator class="native"></generator>
+		</id>
+		<property name="cardNo"></property>
+		<one-to-one cascade="all" name="people" class="People" property-ref="card"></one-to-one>
+	</class>
+</hibernate-mapping>
