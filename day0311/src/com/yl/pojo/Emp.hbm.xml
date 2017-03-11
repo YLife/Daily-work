@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.yl.pojo">
+	<class name="Emp">
+		<id name="empno">
+			<generator class="native"></generator>
+		</id>
+		<property name="ename"></property>
+		<property name="job"></property>
+		<property name="sal"></property>
+		<property name="comm"></property>
+		<property name="mgr"></property>
+		<property name="hiredate"></property>
+		<many-to-one name="dept" class="Dept" column="deptno"></many-to-one>
+	</class>
+</hibernate-mapping>
