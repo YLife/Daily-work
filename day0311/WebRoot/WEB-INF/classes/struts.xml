@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
 <struts>
-	<package name="demo" extends="struts-default"></package>
+	<constant name="struts.custom.i18n.resources" value="applicationConverter"></constant>
+	<package name="demo" extends="struts-default">
+		<action name="list" class="com.yl.action.EmpAction" method="queryList">
+			<result name="list">/index.jsp</result>
+		</action>
+	</package>
 </struts>

@@ -11,5 +11,7 @@
   	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
   	<property name="show_sql">true</property>
   	<property name="format_sql">true</property>
+  	<mapping resource="com/yl/pojo/Emp.hbm.xml"/>
+  	<mapping resource="com/yl/pojo/Dept.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
