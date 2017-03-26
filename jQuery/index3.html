@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>层次选择器</title>
+		<script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript">
+			$(function () {
+				$("p a").css("color","#FF0000");
+				$("p>a").css("text-decoration","none");
+				$("p+div").css("color","aquamarine");
+				$("p~div").css("font-size","20px");
+			});
+		</script>
+	</head>
+	<body>
+		
+		<p>
+			<a href="#">这是一个超链接</a>
+			<a href="#">这是一个超链接</a>
+			<a href="#">这是一个超链接</a>
+			<a href="#">这是一个超链接</a>
+			<p>
+				<a href="#">这是一个超链接</a>
+			</p>
+		</p>
+		<div>这是一个div</div>
+	</body>
+</html>

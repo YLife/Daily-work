@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本选择器</title>
+		<style>
+			#mydiv{
+				border: solid 1px red;
+			}	
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+		<script type="text/javascript">
+			/*$(function() {
+				var div = document.getElementById("mydiv");
+				div.innerHTML = "hello";
+			});*/
+			
+			/*$(function () {
+				$("#mydiv").html = "hello";
+			});*/
+			/*$(function () {
+				$(".mypa").html("hello");
+			})
+			$(function () {
+				$("div").html("sb");
+			})*/
+			$(function () {
+				$("p.myclass").css("color","blue");
+				$("div.mydiv").css("color","#FF0000");
+				$("p.myclass").css("color","blue");
+				$("a,p,div,.myclass").css("fontSize","25px");
+			});
+				
+		</script>
+	</head>
+	<body>
+		<a href="#" class="myclass">这里是一个超链接</a>
+		<p class="mypa">这里是一个段落</p>
+		<p class="mypa">这里是一个段落</p>
+		<p class="myclass">这里是一个段落</p>
+		<p class="mydiv">这里是一个段落</p>
+		<div id="mydiv">
+			这里是一个div
+		</div>
+	</body>
+</html>
